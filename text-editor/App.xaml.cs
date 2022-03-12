@@ -13,5 +13,6 @@ namespace text_editor
     /// </summary>
     public partial class App : Application
     {
+
     }
 }

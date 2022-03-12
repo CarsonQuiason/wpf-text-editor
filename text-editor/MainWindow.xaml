@@ -5,8 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:text_editor"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Text Editor" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+
+        <ToolBar>
+            <Menu>
+                <MenuItem Header="File">
+                    <MenuItem Header="New"/>
+                    <MenuItem Header="Open" Click="Open_File"/>
+                    <MenuItem Header="Save" Click="Save_File"/>
+                    <MenuItem Header="Save As" Click="Save_File_As"/>
+                    <MenuItem Header="Exit" Click="Exit"/>
+                </MenuItem>
+                <MenuItem Header="Help">
+                    <MenuItem Header="About"/>
+                </MenuItem>
+            </Menu>
+        </ToolBar>
+
+        <TextBox Grid.Row="2"
+          HorizontalAlignment="Stretch"
+          VerticalAlignment="Stretch" 
+          MinHeight="270" MinWidth="690"                  
+          x:Name = "textEditorBox" 
+          TextWrapping="Wrap"
+          AcceptsReturn="True"
+          ScrollViewer.VerticalScrollBarVisibility="Auto"/>
     </Grid>
 </Window>
