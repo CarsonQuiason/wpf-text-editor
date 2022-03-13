@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:text_editor"
         mc:Ignorable="d"
-        Title="Text Editor" Height="450" Width="800">
+        Title="New Document" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
@@ -16,14 +16,14 @@
         <ToolBar>
             <Menu>
                 <MenuItem Header="File">
-                    <MenuItem Header="New"/>
+                    <MenuItem Header="New" Click="New_File"/>
                     <MenuItem Header="Open" Click="Open_File"/>
-                    <MenuItem Header="Save" Click="Save_File"/>
-                    <MenuItem Header="Save As" Click="Save_File_As"/>
+                    <MenuItem Name="fastSaveBtn" Header="Save" Click="Fast_Save_File"/>
+                    <MenuItem Header="Save As" Click="Save_Location_Handler"/>
                     <MenuItem Header="Exit" Click="Exit"/>
                 </MenuItem>
                 <MenuItem Header="Help">
-                    <MenuItem Header="About"/>
+                    <MenuItem Header="About" Click="Open_About"/>
                 </MenuItem>
             </Menu>
         </ToolBar>
@@ -35,6 +35,7 @@
           x:Name = "textEditorBox" 
           TextWrapping="Wrap"
           AcceptsReturn="True"
-          ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+          ScrollViewer.VerticalScrollBarVisibility="Auto"
+          TextChanged="textChangedEventHandler"/>
     </Grid>
 </Window>
